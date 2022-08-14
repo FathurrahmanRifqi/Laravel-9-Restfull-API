@@ -7,6 +7,9 @@ import axios from 'axios';
 // router 
 import {useRouter} from 'next/router';
 
+// mantine
+import { Button } from '@mantine/core';
+
 // fetch data with getServerSideProps()
 export async function getServerSideProps(){
     //http request 
@@ -15,12 +18,17 @@ export async function getServerSideProps(){
 
     return {
         props:{
-            posts :res
+            posts :res,
+            
         },
     }
 }
 
+
+  
+
 function PostIndex(props){
+
     // destruct 
     const {posts} = props;
 
@@ -43,10 +51,8 @@ function PostIndex(props){
     }
 
 
-
-
     return(
-        <Layout>
+        <Layout >
             <div className="container" style={{ marginTop: '80px' }}>
                 <div className="row">
                     <div className="col-md-12">
@@ -55,6 +61,7 @@ function PostIndex(props){
                                 <Link href="/posts/create">
                                     <button className="btn btn-primary border-0 shadow-sm mb-3">TAMBAH</button>
                                 </Link>
+                                
                                 <table className="table table-bordered mb-0">
                                     <thead>
                                         <tr>
@@ -73,9 +80,11 @@ function PostIndex(props){
                                             <td>{ post.title }</td>
                                             <td>{ post.content }</td>
                                             <td className="text-center">
+                                            
+
                                                 <Link href={` /posts/edit/${post.id}`}>
-                                                <button className="btn btn-sm btn-primary border-0 shadow-sm mb-3 me-3">EDIT</button></Link>
-                                                <button onClick={()=>deletePost(post.id)} className="btn btn-sm btn-danger border-0 shadow-sm mb-3">DELETE</button>
+                                                <Button color="indigo" mx={10}>EDIT</Button></Link>
+                                                <Button color="blue" onClick={()=>deletePost(post.id)}>DELETE</Button>
                                             </td>
                                         </tr>
                                     )) }
@@ -90,4 +99,6 @@ function PostIndex(props){
     )
 }
 
-export default PostIndex
+export default PostIndex;
+
+
