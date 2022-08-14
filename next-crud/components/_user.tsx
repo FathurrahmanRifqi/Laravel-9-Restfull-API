@@ -30,15 +30,15 @@ export function User() {
       >
         <Group>
           <Avatar
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
+            src="https://media-exp1.licdn.com/dms/image/C5603AQFdm2wvZxuceA/profile-displayphoto-shrink_200_200/0/1608090882623?e=1665014400&v=beta&t=_5niiWVYZpakJgQ4rh8mMNtXidZ9twxxhFL75hU0bfQ"
             radius="xl"
           />
           <Box sx={{ flex: 1 }}>
             <Text size="sm" weight={500}>
-              Amy Horsefighter
+              Fathurrahman Rifqi A
             </Text>
             <Text color="dimmed" size="xs">
-              ahorsefighter@gmail.com
+              fathurrahmanrifqi@gmail.com
             </Text>
           </Box>
 

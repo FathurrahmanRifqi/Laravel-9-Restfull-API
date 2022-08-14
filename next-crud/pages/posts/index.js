@@ -11,6 +11,7 @@ import {useRouter} from 'next/router';
 // mantine
 import { Button } from '@mantine/core';
 import { Table } from '@mantine/core';
+import { IconPencil, IconTrash } from '@tabler/icons';
 
 
 // fetch data with getServerSideProps()
@@ -83,8 +84,8 @@ function PostIndex(props){
                                             
 
                                                 <Link href={` /posts/edit/${post.id}`}>
-                                                <Button color="indigo" mx={10}>EDIT</Button></Link>
-                                                <Button color="blue" onClick={()=>deletePost(post.id)}>DELETE</Button>
+                                                <Button color="indigo" mx={10}><IconPencil /> EDIT</Button></Link>
+                                                <Button color="red" onClick={()=>deletePost(post.id)}><IconTrash /> DELETE</Button>
                                             </td>
                                         </tr>
                                     )) }
