@@ -1,5 +1,6 @@
 import Layout from '../../components/layout';
 
+
 import Link from 'next/link';
 
 import axios from 'axios';
@@ -9,6 +10,8 @@ import {useRouter} from 'next/router';
 
 // mantine
 import { Button } from '@mantine/core';
+import { Table } from '@mantine/core';
+
 
 // fetch data with getServerSideProps()
 export async function getServerSideProps(){
@@ -23,9 +26,6 @@ export async function getServerSideProps(){
         },
     }
 }
-
-
-  
 
 function PostIndex(props){
 
@@ -52,17 +52,17 @@ function PostIndex(props){
 
 
     return(
-        <Layout >
-            <div className="container" style={{ marginTop: '80px' }}>
+        <Layout>
+            {/* <div className="container" style={{ marginTop: '80px' }}>
                 <div className="row">
                     <div className="col-md-12">
                         <div className="card border-0 shadow-sm rounded-3">
-                            <div className="card-body">
+                            <div className="card-body"> */}
                                 <Link href="/posts/create">
-                                    <button className="btn btn-primary border-0 shadow-sm mb-3">TAMBAH</button>
+                                    <Button mb={10}>TAMBAH</Button>
                                 </Link>
                                 
-                                <table className="table table-bordered mb-0">
+                                <Table striped highlightOnHover  >
                                     <thead>
                                         <tr>
                                             <th scope="col">IMAGE</th>
@@ -89,12 +89,12 @@ function PostIndex(props){
                                         </tr>
                                     )) }
                                     </tbody>
-                                </table>  
-                            </div>
+                                </Table>  
+                            {/* </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </Layout>
     )
 }

@@ -34,6 +34,7 @@ export default function Layout({children}){
                 </Group>
                 </Header>
             }
+            
             styles={(theme) => ({
                 main: {
                 backgroundColor:
